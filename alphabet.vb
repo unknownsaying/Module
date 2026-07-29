@@ -113,9 +113,11 @@ Module r
 [r][0][0]
 end Module
 Module s
-[s][s][s]
 [0][s][0]
-[s][s][s]
+[s][0][0]
+[0][s][0]
+[0][0][s]
+[0][s][0]
 end Module
 Module t
 [0][t][0]
