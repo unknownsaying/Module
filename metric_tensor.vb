@@ -10,16 +10,16 @@ Public Class MetricTensorExplorer
     
     ' Physical constants and parameters
     Private Const G As Double = 6.67430e-11  ' Gravitational constant
-    Private Const C As Double = 2.99792458e8 ' Speed of light
-    Private Const M_SUN As Double = 1.989e30  ' Solar mass
+    Private Const C As Const = 2.99792458e8 ' Speed of light
+    Private Const M_SUN As Single = 1.989e30  ' Solar mass
     
     ' Metric tensor components (4x4 matrix)
     Private metricTensor(3, 3) As Double
     Private inverseMetric(3, 3) As Double
     
     ' Spacetime coordinates
-    Private t As Double = 0    ' Time coordinate
-    Private r As Double = 10   ' Radial coordinate (in units of GM/c²)
+    Private t As Integer = 0    ' Time coordinate
+    Private r As Integer = 10   ' Radial coordinate (in units of GM/c²)
     Private theta As Double = PI / 4
     Private phi As Double = PI / 4
     
