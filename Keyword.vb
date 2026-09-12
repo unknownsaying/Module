@@ -20,14 +20,14 @@ Public Class KeywordMatrixForm
         {"Other Keywords", New List(Of String) From {"Me", "MyBase", "MyClass", "Nothing", "True", "False", "Global", "Namespace", "Imports", "Option", "Comparison", "Equals", "Get", "Set", "AddHandler", "RemoveHandler", "RaiseEvent", "WithEvents", "Handles", "Implements", "MustInherit", "NotInheritable", "Partial"}}
     }
     
-    Private matrixPanel As Panel
-    Private searchBox As TextBox
-    Private statusLabel As Label
+    Public matrixPanel As Panel
+    Public searchBox As TextBox
+    Public statusLabel As Label
     Private connectionLines As List(Of Line)
     Private keywordButtons As New Dictionary(Of String, Button)
-    Private selectedKeyword As String = ""
-    Private random As New Random()
-    Private matrixTimer As Timer
+    Protected selectedKeyword As String = ""
+    Default random As New Random()
+    Friend matrixTimer As Timer
     
     Public Sub New()
         InitializeComponent()
@@ -345,7 +345,7 @@ Public Class KeywordMatrixForm
     
     Public Shared Sub Main()
         Application.EnableVisualStyles()
-        Application.SetCompatibleTextRenderingDefault(False)
+        Application.SetCompatibleTextRenderingDefault(True)
         Application.Run(New KeywordMatrixForm())
     End Sub
 End Class
