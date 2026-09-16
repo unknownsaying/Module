@@ -3,7 +3,7 @@ Imports System.Collections.Generic
 Imports System.Drawing
 Imports System.Windows.Forms
 
-Public Class KeywordMatrixForm
+Class KeywordMatrixForm
     Inherits Form
     
     ' List of all VB.NET keywords organized by category
@@ -125,7 +125,7 @@ Public Class KeywordMatrixForm
         matrixPanel.AutoScrollMinSize = New Size(totalWidth, totalHeight)
     End Sub
     
-    Private Function GetAllKeywords() As List(Of String)
+    Function GetAllKeywords() As List(Of String)
         Dim result As New List(Of String)()
         For Each kvp In keywordCategories
             result.AddRange(kvp.Value)
@@ -133,7 +133,7 @@ Public Class KeywordMatrixForm
         Return result
     End Function
     
-    Private Function GetKeywordColors() As Dictionary(Of String, Color)
+    Function GetKeywordColors() As Dictionary(Of String, Color)
         Dim colors As New Dictionary(Of String, Color)()
         Dim colorList As New List(Of Color) From {
             Color.FromArgb(255, 100, 100), ' Red
@@ -238,12 +238,12 @@ Public Class KeywordMatrixForm
         Next
     End Sub
     
-    Private Sub RefreshMatrix()
+    Sub RefreshMatrix()
         matrixPanel.Invalidate()
         matrixPanel.Refresh()
     End Sub
     
-    Private Sub OnSearchTextChanged(sender As Object, e As EventArgs)
+    Sub OnSearchTextChanged(sender As Object, e As EventArgs)
         Dim searchText = searchBox.Text.ToLower()
         
         For Each btn In matrixPanel.Controls.OfType(Of Button)()
@@ -323,7 +323,7 @@ Public Class KeywordMatrixForm
         End Using
     End Sub
     
-    Private Class Line
+    Class Line
         Public Property Start As Point
         Public Property [End] As Point
         Public Property Label As String
